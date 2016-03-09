@@ -30,7 +30,7 @@ node['logdna_agent']['log_directories'].each do |dir|
   end
 end
 
-unless node['logdna_agent']['tags'].nil?
+unless node['logdna_agent']['tags'].nil? || node['logdna_agent']['tags'].empty?
   execute "add tags to logdna-agent" do
     command "logdna-agent -t #{node['logdna_agent']['tags']}"
   end
