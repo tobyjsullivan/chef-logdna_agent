@@ -4,7 +4,7 @@
 #
 # Copyright 2016, Toby Sullivan
 #
-# All rights reserved - Do Not Redistribute
+# All rights reserved
 #
 
 # Host agent install instructions from logdna.com:
