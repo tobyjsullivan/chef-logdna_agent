@@ -17,14 +17,20 @@ Attributes
   <tr>
     <td><tt>['logdna_agent']['api_key']</tt></td>
     <td>String</td>
-    <td>Your API key as provided by LogDNA</td>
+    <td>Your API key as provided by LogDNA.</td>
     <td><tt>''</tt></td>
   </tr>
   <tr>
     <td><tt>['logdna_agent']['log_directories']</tt></td>
     <td>Array[String]</td>
-    <td>Directories to follow (recursively) in addition to <var>/var/log</var></td>
+    <td>Directories to follow (recursively) in addition to <var>/var/log</var>.</td>
     <td><tt>[]</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['logdna_agent']['tags']</tt></td>
+    <td>String</td>
+    <td>(Optional) Comma-separated list of tags to apply to the host.</td>
+    <td><tt>''</tt></td>
   </tr>
 </table>
 
