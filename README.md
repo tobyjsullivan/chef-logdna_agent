@@ -18,13 +18,13 @@ Attributes
     <td><tt>['logdna_agent']['api_key']</tt></td>
     <td>String</td>
     <td>Your API key as provided by LogDNA</td>
-    <td><code>''<code></td>
+    <td><tt>''</tt></td>
   </tr>
   <tr>
     <td><tt>['logdna_agent']['log_directories']</tt></td>
     <td>Array[String]</td>
     <td>Directories to follow (recursively) in addition to <var>/var/log</var></td>
-    <td><code>[]</code></td>
+    <td><tt>[]</tt></td>
   </tr>
 </table>
 
@@ -44,7 +44,5 @@ Just include `logdna_agent` in your node's `run_list` and set `api_key` and (opt
 
 ```ruby
 node.set['logdna_agent']['api_key'] = 'XXXXXXXXXXXXXXXXXXXXXXXXX'
-node.set['logdna_agent']['log_directories'] = [
-  '/go/bin/'
-]
+node.set['logdna_agent']['log_directories'] = ['/go/bin/']
 ```
