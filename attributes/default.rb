@@ -1,2 +1,2 @@
-node.set['logdna_agent']['api_key'] = ''
-node.set['logdna_agent']['log_directories'] = []
+default['logdna_agent']['api_key'] = ''
+default['logdna_agent']['log_directories'] = []

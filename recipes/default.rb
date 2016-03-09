@@ -7,26 +7,15 @@
 # All rights reserved
 #
 
-# Host agent install instructions from logdna.com:
-# ===
-# echo "deb http://repo.logdna.com stable main" | sudo tee /etc/apt/sources.list.d/logdna.list
-# sudo apt-get update
-# sudo apt-get install -y --force-yes logdna-agent
-# sudo logdna-agent -k <API_KEY>
-# # /var/log is monitored/added by default (recursively), optionally specify more folders here
-# sudo logdna-agent -d /path/to/log/folders
-# sudo update-rc.d logdna-agent defaults
-# sudo /etc/init.d/logdna-agent start
-
 apt_repository 'logdna' do
   uri        'http://repo.logdna.com'
-  components ['main', 'stable']
+  components ['stable', 'main']
   action     :add
-  notifies   :run, 'execute[apt-get update]', :immediately
+  trusted    true
 end
 
 execute 'run logdna-agent' do
-  command "logdna-agent -k #{node['logdna']['api_key']}"
+  command "logdna-agent -k #{node['logdna_agent']['api_key']}"
   action  :nothing
 end
 
