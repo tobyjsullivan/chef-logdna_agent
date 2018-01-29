@@ -10,8 +10,9 @@
 apt_repository 'logdna' do
   uri        'http://repo.logdna.com'
   components ['stable', 'main']
+  distribution nil
+  key 'https://s3.amazonaws.com/repo.logdna.com/logdna.gpg'
   action     :add
-  trusted    true
 end
 
 execute 'run logdna-agent' do
